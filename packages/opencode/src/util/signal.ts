@@ -1,6 +1,6 @@
 export function signal() {
   let resolve: () => void = () => {
-    throw new Error("signal.trigger() called before initialization")
+    throw new Error("signal not initialized")
   }
   const promise = new Promise<void>((r) => {
     resolve = () => r()
